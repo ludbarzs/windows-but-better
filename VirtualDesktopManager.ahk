@@ -50,4 +50,10 @@ GoToDesktopNumber(n) {
     
     ; Direct navigation to desktop n-1 (0-indexed)
     DllCall("VirtualDesktopAccessor\GoToDesktopNumber", "Int", n - 1)
+
+    ; Wait for the switch to finish (adjust delay as needed)
+    Sleep(200)
+
+    ; Simulate Alt+Tab
+    Send "{Alt down}{Tab}{Alt up}"
 }
