@@ -57,3 +57,9 @@ GoToDesktopNumber(n) {
     ; Simulate Alt+Tab
     Send "{Alt down}{Tab}{Alt up}"
 }
+
+#+q::  ; Win + Shift + Q
+{
+    winPID := WinGetPID("A")  ; Get process ID of the active window
+    ProcessClose(winPID)      ; Kill it immediately
+}
